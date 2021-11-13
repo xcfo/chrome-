@@ -1,0 +1,300 @@
+localStorge is needed
+for this.
+
+code:
+
+    ..js(
+        for o.html(option page))
+
+``
+`js
+function urlHaveChanged(text) {
+    document.body.style.background = "url(" + text + ")";
+}
+
+var pass = `
+gwa5f ? 5 tHQ % EREJGENCFfGw = tb - !cDktP @ @qDQb2BUNbJ6P @sGqcnV + 4 ys27$ @DRp6# mYm * BgM % 6 r = 8# PWmp = R = 4 rBhJTwN2 * $$ + NMCm4TRY * QT!sMn % m# = E8GLuxXrdn3YW# DBJuSRv8Wx + DPVZPDWUBywt ^ ey_T4BLd & 2 y3P4u @QqY# r57B4# cZVp7ehrYXTDqU$D @c - U# L34HP = % as42## GYtGsdw$qFkjy3 - ^ t + fXgp_ ? XYYF @n6Zm = AFG3J `
+
+function savebg() {
+    var url = document.getElementById("url").value;
+    localStorage.setItem(pass, url);
+    document.body.style.background = "url(" + url + ")";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundPosition = "center 60%";
+    document.body.style.backgroundAttachment = "fixed";
+}
+
+localStorage.getItem(pass) == null ? document.body.style.background = "url(https://images.unsplash.com/photo-1511207538754-e8555f2bc187?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb)" : document.body.style.background = "url(" + localStorage.getItem(pass) + ")";
+document.body.style.backgroundSize = "cover";
+document.body.style.backgroundRepeat = "no-repeat";
+document.body.style.backgroundPosition = "center 60%";
+document.body.style.backgroundAttachment = "fixed";
+`
+``
+
+o.html(option page)
+
+``
+`html
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tab</title>
+    <style>
+         ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+        
+        body {
+            background: url(https://images.unsplash.com/photo-1511207538754-e8555f2bc187?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center 60%;
+            background-attachment: fixed;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+        
+        #time {
+            position: absolute;
+            top: 300px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 8em;
+            color: rgb(255, 255, 255);
+            font-family: "Helvetica", monospace;
+            font-weight: bold;
+            user-select: none;
+        }
+        
+        #date {
+            position: absolute;
+            top: 380px;
+            left: 50%;
+            font-size: large;
+            transform: translate(-50%, -50%);
+            color: rgb(255, 255, 255);
+            font-family: "Helvetica", sans-serif;
+            user-select: none;
+        }
+        
+        .cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            opacity: 0;
+            background-color: rgba(255, 255, 255, 0);
+            animation: in 2s;
+        }
+        
+        .form {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            height: 400px;
+            width: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 1);
+        }
+        
+        .url {
+            color: rgb(255, 255, 255);
+            font-family: "Helvetica", sans-serif;
+            font-weight: bold;
+            font-size: 1em;
+            margin-right: 5px;
+            user-select: none;
+        }
+        
+        input {
+            width: 50%;
+            border: none;
+            border-bottom: 2px solid rgb(85, 153, 255);
+            outline: none;
+            background-color: rgba(255, 255, 255, .1);
+            color: rgb(255, 255, 255);
+            font-size: 1.2em;
+            border-radius: 5px;
+            font-family: "Helvetica", sans-serif;
+            font-weight: bold;
+            user-select: none;
+            text-overflow: ellipsis;
+        }
+        
+        button {
+            margin-left: 5px;
+            border: 2px solid rgb(85, 153, 255);
+            border-left: none;
+            border-right: none;
+            outline: none;
+            background-color: rgba(255, 255, 255, .1);
+            color: rgb(255, 255, 255);
+            font-size: 1.2em;
+            font-family: "Helvetica", sans-serif;
+            font-weight: bold;
+            user-select: none;
+            text-overflow: ellipsis;
+            transition: .5s;
+            border-radius: 3px;
+        }
+        
+        button:hover {
+            border: 2px solid rgb(255, 85, 85);
+            border-left: none;
+            border-right: none;
+        }
+        
+         ::selection {
+            background: rgba(85, 173, 255, 0.2)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form">
+        <font class="url">Try to use a dark background: </font><input id="url" type="url" title="url" placeholder="Url" value="https://images.unsplash.com/photo-1511207538754-e8555f2bc187?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb">
+        <button onclick="savebg()">Set</button>
+    </div>
+    <script src="..js">
+    </script>
+</body>
+
+</html>
+`
+``
+
+newtab.html
+
+    ``
+`html
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tab</title>
+    <style>
+         ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+        
+        body {
+            background: url(https://images.unsplash.com/photo-1511207538754-e8555f2bc187?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center 60%;
+            background-attachment: fixed;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+        
+        #time {
+            position: absolute;
+            top: 300px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 8em;
+            color: rgb(255, 255, 255);
+            font-family: "Helvetica", monospace;
+            font-weight: bold;
+            user-select: none;
+        }
+        
+        #date {
+            position: absolute;
+            top: 380px;
+            left: 50%;
+            font-size: large;
+            transform: translate(-50%, -50%);
+            color: rgb(255, 255, 255);
+            font-family: "Helvetica", sans-serif;
+            user-select: none;
+        }
+        
+        .cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            opacity: 0;
+            background-color: rgba(255, 255, 255, 0);
+            animation: in 2s;
+        }
+    </style>
+</head>
+
+<body>
+    <font id="time"></font>
+    <font id="date"></font>
+    <div class="cover"></div>
+    <script src="newtab.js">
+    </script>
+</body>
+
+</html>
+`
+``
+
+newtab.js(
+    for newtab.html)
+
+``
+`js
+function calc(num, length = 2) {
+    for (var len = (num + "").length; len < length; len = num.length) {
+        num = "0" + num;
+    }
+    return num;
+}
+
+setInterval(function() {
+        var today = new Date();
+        var h = calc(today.getHours());
+        var m = calc(today.getMinutes());
+        document.getElementById('time').innerHTML = h + ":" + m;
+        // get date
+        var date = new Date();
+        var day = calc(date.getDate());
+        var month = calc(date.getMonth() + 1);
+        var year = date.getFullYear();
+        document.getElementById('date').innerHTML = day + "/" + month + "/" + year;
+    }
+
+)
+localStorage.getItem("gwa5f?5tHQ%EREJGENCFfGw=tb-!cDktP@@qDQb2BUNbJ6P@sGqcnV+4ys27$@DRp6#mYm*BgM%6r=8#PWmp=R=4rBhJTwN2*$$+NMCm4TRY*QT!sMn%m#=E8GLuxXrdn3YW#DBJuSRv8Wx+DPVZPDWUBywt^ey_T4BLd&2y3P4u@QqY#r57B4#cZVp7ehrYXTDqU$D@c-U#L34HP=%as42##GYtGsdw$qFkjy3-^t+fXgp_?XYYF@n6Zm=AFG3J") == null ? document.body.style.background = "url(https://images.unsplash.com/photo-1511207538754-e8555f2bc187?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb)" : document.body.style.background = "url(" + localStorage.getItem("gwa5f?5tHQ%EREJGENCFfGw=tb-!cDktP@@qDQb2BUNbJ6P@sGqcnV+4ys27$@DRp6#mYm*BgM%6r=8#PWmp=R=4rBhJTwN2*$$+NMCm4TRY*QT!sMn%m#=E8GLuxXrdn3YW#DBJuSRv8Wx+DPVZPDWUBywt^ey_T4BLd&2y3P4u@QqY#r57B4#cZVp7ehrYXTDqU$D@c-U#L34HP=%as42##GYtGsdw$qFkjy3-^t+fXgp_?XYYF@n6Zm=AFG3J") + ")";
+document.body.style.backgroundSize = "cover";
+document.body.style.backgroundRepeat = "no-repeat";
+document.body.style.backgroundPosition = "center 60%";
+document.body.style.backgroundAttachment = "fixed";
+`
+``
+
+newtab.js get time and date
+)
+localStorage.getItem("gwa5f?5tHQ%EREJGENCFfGw=tb-!cDktP@@qDQb2BUNbJ6P@sGqcnV+4ys27$@DRp6#mYm*BgM%6r=8#PWmp=R=4rBhJTwN2*$$+NMCm4TRY*QT!sMn%m#=E8GLuxXrdn3YW#DBJuSRv8Wx+DPVZPDWUBywt^ey_T4BLd&2y3P4u@QqY#r57B4#cZVp7ehrYXTDqU$D@c-U#L34HP=%as42##GYtGsdw$qFkjy3-^t+fXgp_?XYYF@n6Zm=AFG3J") == null ? document.body.style.background = "url(https://images.unsplash.com/photo-1511207538754-e8555f2bc187?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb)" : document.body.style.background = "url(" + localStorage.getItem("gwa5f?5tHQ%EREJGENCFfGw=tb-!cDktP@@qDQb2BUNbJ6P@sGqcnV+4ys27$@DRp6#mYm*BgM%6r=8#PWmp=R=4rBhJTwN2*$$+NMCm4TRY*QT!sMn%m#=E8GLuxXrdn3YW#DBJuSRv8Wx+DPVZPDWUBywt^ey_T4BLd&2y3P4u@QqY#r57B4#cZVp7ehrYXTDqU$D@c-U#L34HP=%as42##GYtGsdw$qFkjy3-^t+fXgp_?XYYF@n6Zm=AFG3J") + ")";
+document.body.style.backgroundSize = "cover";
+document.body.style.backgroundRepeat = "no-repeat";
+document.body.style.backgroundPosition = "center 60%";
+document.body.style.backgroundAttachment = "fixed";
+``
+`
+
+newtab.js get time, date and localStorage(for change the background)

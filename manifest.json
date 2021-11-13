@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "NewTab",
+    "version": "1.0",
+    "chrome_url_overrides": {
+        "newtab": "newtab.html"
+    },
+    "permissions": [
+        "tabs",
+        "storage",
+        "unlimitedStorage",
+        "contextMenus",
+        "webNavigation",
+        "webRequest",
+        "webRequestBlocking"
+    ],
+    "icons": {
+        "1080": "icon.png"
+    },
+    "description": "New tab with a simple watch.",
+
+    "options_page": "o.html",
+    "offline_enabled": false
+}
